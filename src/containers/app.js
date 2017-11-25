@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Header from '../components/Header';
-import Carousel from '../components/Carousel';
 import HomePage from '../containers/HomePage';
 import SearchPage from '../containers/SearchPage';
 
@@ -22,10 +21,9 @@ export default class App extends Component {
                 <div>
                     <Header />
                     <div className="container" style={ mainContainerDiv }>
-                        <Carousel />
                         {/* <SearchBar classNameForm={'input-group main-search-bar'} classNameSpan={'input-group-btn'}/> */}
                         <Switch>
-                            <Route exact path="/search" component={SearchPage} />
+                            <Route exact path="/category/:category" component={SearchPage} />
                             <Route exact path="/" component={HomePage} />
                         </Switch>
                     </div>
