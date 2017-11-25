@@ -34,11 +34,11 @@
     "react-redux": "4.3.0",
     "react-router": "^2.0.1",
     "react-router-dom": "^4.2.2",
+    "react-tag-autocomplete": "^5.5.0",
     "react-tagcloud": "^1.2.0",
     "redux": "^3.0.4"
   },
-  "bugs": {
-  },
+  "bugs": {},
   "directories": {
     "test": "test"
   }

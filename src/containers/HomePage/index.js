@@ -1,45 +1,12 @@
 import React, { Component } from 'react';
 import { TagCloud } from 'react-tagcloud';
+import Article from '../../components/Article';
 
 class HomePage extends Component {
     componentDidMount() {
         console.log("Welcome to Homepage");
     }
-    renderArticle() {
-        let i = 0;
-        return (
-            <div>
-                <div key={i++} className="news-wrapper">
-                    <div className="img-wrapper col-xs-3">
-                        <img className="news-img" alt="article img" src="../../../src/static/img/tracer-wallpaper-wide.jpg" />
-                    </div>
-                    <div className="content-wrapper col-xs-8">
-                        <div className="news-content">
-                        </div>
-                    </div>
-                </div>
-                <div key={i++} className="news-wrapper">
-                    <div className="img-wrapper col-xs-3">
-                        <img className="news-img" alt="article img" src="../../../src/static/img/tracer-wallpaper-wide.jpg" />
-                    </div>
-                    <div className="content-wrapper col-xs-8">
-                        <div className="news-content">
-                            <p>dfasdfasdfdsfadsfkamsdkfmaskdfmaksdfmkadsmfkeam kamefi ajif jaei fai jfia ejifa eifaji iaj fi</p>
-                        </div>
-                    </div>
-                </div>
-                <div key={i++} className="news-wrapper">
-                    <div className="img-wrapper col-xs-3">
-                        <img className="news-img" alt="article img" src="../../../src/static/img/tracer-wallpaper-wide.jpg" />
-                    </div>
-                    <div className="content-wrapper col-xs-8">
-                        <div className="news-content">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        );
-    }
+    
     render() {
         // data stack here
         const data = [
@@ -80,7 +47,7 @@ class HomePage extends Component {
                     onClick={tag => alert(`'${tag.value}' was selected!`)} 
                     renderer={customRenderer} />
                 <div className="col-md-8 pull-left">
-                    {this.renderArticle()}
+                    <Article />
                 </div>
                 <div className="col-md-3">
                     <ul className="list-group">Global
