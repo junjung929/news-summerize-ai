@@ -38,7 +38,7 @@ class Article extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="article-wrapper">
                 {this.renderArticle()}
             </div>
         );

@@ -31,11 +31,13 @@ class AutoTags extends Component {
 
     render() {
         return (
-            <ReactTags
-                tags={this.state.tags}
-                suggestions={this.state.suggestions}
-                handleDelete={this.handleDelete.bind(this)}
-                handleAddition={this.handleAddition.bind(this)} />
+            <div style={{ margin: "0" }}>
+                <ReactTags
+                    tags={this.state.tags}
+                    suggestions={this.state.suggestions}
+                    handleDelete={this.handleDelete.bind(this)}
+                    handleAddition={this.handleAddition.bind(this)} />
+            </div>
         )
     }
 }

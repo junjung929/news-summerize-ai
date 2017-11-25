@@ -4,14 +4,14 @@ import Article from '../../components/Article';
 import Carousel from '../../components/Carousel';
 
 class SearchPage extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
 
-        this.state={
+        this.state = {
 
         }
     }
-    componentWillMount(){
+    componentWillMount() {
         const { category } = this.props.match.params;
         console.log(category);
     }
@@ -19,11 +19,12 @@ class SearchPage extends Component {
         const { category } = this.props.match.params;
         return (
             <div>
-            <Carousel category={category} />
-            <div style={{ width: "80%", marginLeft: "auto", marginRight: "auto" }}>
-                <AutoTags />
-                <Article />
-            </div>
+                <Carousel category={category} />
+                <div style={{ width: "80%", marginLeft: "auto", marginRight: "auto" }}>
+                    <AutoTags />
+                    <h3 className="text-center">{this.props.match.params.category}</h3>
+                    <Article />
+                </div>
             </div>
         )
     }

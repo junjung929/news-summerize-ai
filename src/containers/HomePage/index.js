@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { TagCloud } from 'react-tagcloud';
 import Article from '../../components/Article';
 import Carousel from '../../components/Carousel';
@@ -25,43 +26,47 @@ class HomePage extends Component {
             <span key={tag.value}
                 style={{
                     fontSize: `${size}px`,
-                    margin: '3px',
+                    marginLeft: '20px',
                     padding: '3px',
                     display: 'inline-block',
                     color: `${color}`,
                 }}>{tag.value}</span>
         );
-        const tagStyle = {
-            marginLeft: "auto",
-            marginRight: "auto",
-            marginTop: "5%",
-            marginBottom: "5%",
-            width: "80%"
-        }
         return (
             <div>
                 <Carousel />
 
-                <TagCloud className="text-center"
-                    style={tagStyle}
+                <h2 className="text-center tag-ment">You might be interested!</h2>
+                <TagCloud className="text-center tag-cloud"
                     minSize={12}
                     maxSize={35}
                     tags={data}
                     onClick={tag => alert(`'${tag.value}' was selected!`)}
                     renderer={customRenderer} />
-                <div className="col-md-8 pull-left">
-                    <Article />
-                </div>
-                <div className="col-md-3">
-                    <ul className="list-group">Global
-                        <li className="list-group-item">HeadLine</li>
-                        <li className="list-group-item">HeadLine</li>
-                        <li className="list-group-item">HeadLine</li>
-                        <li className="list-group-item">HeadLine</li>
-                        <li className="list-group-item">HeadLine</li>
-                        <li className="list-group-item">HeadLine</li>
-                        <li className="list-group-item">HeadLine</li>
-                    </ul>
+                <div className="home-content-wrapper">
+                    <div className="col-md-8 pull-left home-content">
+                        <Article />
+                    </div>
+                    <div className="col-md-4 ">
+                        <ul className="list-group">Global
+                            <Link className="list-group-item" to="/">HeadLine </Link>
+                            <Link className="list-group-item" to="/">HeadLine </Link>
+                            <Link className="list-group-item" to="/">HeadLine </Link>
+                            <Link className="list-group-item" to="/">HeadLine </Link>
+                            <Link className="list-group-item" to="/">HeadLine </Link>
+                            <Link className="list-group-item" to="/">HeadLine </Link>
+                        </ul>
+                    </div>
+                    <div className="col-md-4 ">
+                        <ul className="list-group">Trend
+                            <Link className="list-group-item" to="/">HeadLine </Link>
+                            <Link className="list-group-item" to="/">HeadLine </Link>
+                            <Link className="list-group-item" to="/">HeadLine </Link>
+                            <Link className="list-group-item" to="/">HeadLine </Link>
+                            <Link className="list-group-item" to="/">HeadLine </Link>
+                            <Link className="list-group-item" to="/">HeadLine </Link>
+                        </ul>
+                    </div>
                 </div>
             </div>
         );
